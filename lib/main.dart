@@ -15,37 +15,14 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
-          child: Row( // row and column have the same property only the direction is changed
-            // mainAxisSize: MainAxisSize.min, // shrinks to the size that fits the children
-            // verticalDirection: VerticalDirection.up, // The "start" is at the bottom, the "end" is at the top.
-            // verticalDirection: VerticalDirection.down, // The "start" is at the top, the "end" is at the bottom.
-            // mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Justify-content in css
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                height: 100.0,
-                width: 100.0,
-                color: Colors.black,
-                child: Text("Black", style: TextStyle(color: Colors.white),),
-              ),
-              SizedBox(height: 20.0,), // for row you have to provide the width and for column you have to provide the height
-              SizedBox(width: 20.0,), // for row you have to provide the width and for column you have to provide the height
-              Container(
-                height: 100.0,
-                width: 100.0,
-                color: Colors.red,
-                child: Text("Red", style: TextStyle(color: Colors.white)),
-              ),
-              SizedBox(height: 20.0,), // for row you have to provide the width and for column you have to provide the height
-              SizedBox(width: 20.0,), // for row you have to provide the width and for column you have to provide the height
-              Container(
-                height: 100.0,
-                width: 100.0,
-                color: Colors.green,
-                child: Text("Green", style: TextStyle(color: Colors.white)),
-              ),
+              Container(color: Colors.black,width: 100.0,height: double.infinity),
+              Container(color: Colors.red,width: 100.0,height: 100.0),
+              Container(color: Colors.green,width: 100.0,height: double.infinity)
             ],
-          )
+          ),
         ),
       ),
     );
