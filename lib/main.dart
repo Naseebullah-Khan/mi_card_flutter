@@ -4,8 +4,6 @@ void main() {
   runApp(MyApp());
 }
 
-// https://medium.com/flutter-community/flutter-layout-cheat-sheet-5363348d037e
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -15,12 +13,20 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Column(
             children: [
-              Container(color: Colors.black,width: 100.0,height: double.infinity),
-              Container(color: Colors.red,width: 100.0,height: 100.0),
-              Container(color: Colors.green,width: 100.0,height: double.infinity)
+              CircleAvatar(
+                radius: 50.0,
+                backgroundImage: AssetImage("images/profile.jpg"),
+              ),
+              Text(
+                "Naseebullah Hoshmand",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 37.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ],
           ),
         ),
