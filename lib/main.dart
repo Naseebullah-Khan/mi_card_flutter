@@ -4,6 +4,8 @@ void main() {
   runApp(MyApp());
 }
 
+// https://medium.com/flutter-community/flutter-layout-cheat-sheet-5363348d037e
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -13,27 +15,37 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
-          child: Container(
-            height: 100.0,
-            width: 100.0,
-            // margin: EdgeInsets.all(20.0), // give margin to all sides
-            // margin: EdgeInsets.symmetric(
-            //   vertical: 50.0,
-            //   horizontal: 10.0,
-            // ), // you have to pass two values one for top&botton and another for left&right
-            // margin: EdgeInsets.fromLTRB(
-            //   30.0, // left
-            //   10.0, // top
-            //   50.0, // right
-            //   20.0, // bottom
-            // ), // you have to pass values for all sides
-            margin: EdgeInsets.only(
-              left: 30.0,
-            ), // if you want to give margin to left only or to right only or to top only or bottom only
-            padding: EdgeInsets.all(20.0),
-            color: Colors.white,
-            child: Text("Hello, World!"),
-          ), // container can have only one child
+          child: Row( // row and column have the same property only the direction is changed
+            // mainAxisSize: MainAxisSize.min, // shrinks to the size that fits the children
+            // verticalDirection: VerticalDirection.up, // The "start" is at the bottom, the "end" is at the top.
+            // verticalDirection: VerticalDirection.down, // The "start" is at the top, the "end" is at the bottom.
+            // mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Justify-content in css
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                height: 100.0,
+                width: 100.0,
+                color: Colors.black,
+                child: Text("Black", style: TextStyle(color: Colors.white),),
+              ),
+              SizedBox(height: 20.0,), // for row you have to provide the width and for column you have to provide the height
+              SizedBox(width: 20.0,), // for row you have to provide the width and for column you have to provide the height
+              Container(
+                height: 100.0,
+                width: 100.0,
+                color: Colors.red,
+                child: Text("Red", style: TextStyle(color: Colors.white)),
+              ),
+              SizedBox(height: 20.0,), // for row you have to provide the width and for column you have to provide the height
+              SizedBox(width: 20.0,), // for row you have to provide the width and for column you have to provide the height
+              Container(
+                height: 100.0,
+                width: 100.0,
+                color: Colors.green,
+                child: Text("Green", style: TextStyle(color: Colors.white)),
+              ),
+            ],
+          )
         ),
       ),
     );
